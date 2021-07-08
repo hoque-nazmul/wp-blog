@@ -67,3 +67,20 @@ h2.post-title {
 .tags li{
     color: #3D9970;
 }
+
+.page-numbers {
+    color: black;
+    padding: 10px 9px;
+    background: white;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+.page-numbers:hover {
+    text-decoration: none;
+    background: #eee;
+}
+
+.pagination {
+    justify-content: center;
+}
