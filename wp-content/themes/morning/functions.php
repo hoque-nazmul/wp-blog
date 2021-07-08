@@ -1,5 +1,4 @@
 <?php 
-die(wp_get_theme()->get('Version'));
 function morning_theme_setup () {
     load_theme_textdomain('morning');
     add_theme_support('title-tag');
@@ -14,6 +13,18 @@ function morning_theme_assets () {
     } else {
         define('VERSION', wp_get_theme()->get('Version'));
     }
-    wp_enqueue_style('main-css', get_stylesheet_uri(), null, VERSION);
+
+    wp_enqueue_style(
+        'bootstrap-css', 
+        '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', 
+        null, 
+        VERSION
+    );
+    wp_enqueue_style(
+        'main-css', 
+        get_stylesheet_uri(), 
+        null, 
+        VERSION
+    );
 }
 add_action('wp_enqueue_scripts', 'morning_theme_assets');
