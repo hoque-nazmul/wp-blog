@@ -19,31 +19,27 @@
                 <div <?php post_class(['post']); ?>>
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="<?php the_permalink(); ?>">
-                                <h2 class="post-title text-center">
-                                    <?php the_title(); ?>
-                                </h2>
-                            </a>
+                            <h2 class="post-title text-center">
+                                <?php the_title(); ?>
+                            </h2>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2">
-                            <p>
+                        <div class="col-md-12">
+                            <p class="text-center">
                                 <strong>
                                     <?php the_author(); ?>
                                 </strong>
                                 <br/>
-                                <?php get_the_date(); ?>
+                                <?php echo get_the_date(); ?>
                             </p>
                             <?php 
                                 the_tags(
-                                    '<ul class="list-unstyled"><li>', 
+                                    '<ul class="list-unstyled d-flex justify-content-center"><li class="px-2">', 
                                     '</li><li>', 
                                     '</li></ul>'
                                 );
                             ?>
-                        </div>
-                        <div class="col-md-10">
                             <p>
                                 <?php 
                                     if(has_post_thumbnail()) {
