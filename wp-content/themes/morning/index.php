@@ -34,8 +34,10 @@
                                 </strong>
                                 <br/>
                                 <?php echo get_the_date(); ?>
-                            </p>
+                            </p> 
+                            <p class="font-size: 20px"><?php echo get_post_meta(get_the_ID(), 'place', true) ?></p>
                             <?php 
+                           
                                 the_tags(
                                     '<ul class="list-unstyled"><li>', 
                                     '</li><li>', 
