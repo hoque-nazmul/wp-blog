@@ -18,9 +18,7 @@ h1.heading {
     font-family: "Arial Black";
     width: 700px;
     margin: auto;
-    margin-bottom: 70px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 40px;
 }
 
 h3.tagline{
@@ -85,6 +83,12 @@ h2.post-title {
     justify-content: center;
 }
 
+.menu-primary-menu-container {
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
 .menu {
     list-style: none;
     display: flex;
@@ -103,3 +107,4 @@ h2.post-title {
     text-decoration: none;
     background: rgb(211, 211, 211);
 }
+
