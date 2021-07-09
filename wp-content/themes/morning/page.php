@@ -22,7 +22,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>
+                            <p class="mb-2">
                                 <?php 
                                     if(has_post_thumbnail()) {
                                         the_post_thumbnail('large', ['class' => 'img-fluid']);
