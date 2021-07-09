@@ -33,7 +33,7 @@
                                     <?php the_author(); ?>
                                 </strong>
                                 <br/>
-                                <?php get_the_date(); ?>
+                                <?php echo get_the_date(); ?>
                             </p>
                             <?php 
                                 the_tags(
