@@ -3,6 +3,7 @@ function morning_theme_setup () {
     load_theme_textdomain('morning');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    register_nav_menu('primary', 'main-menu');
 }
 add_action('after_setup_theme', 'morning_theme_setup');
 

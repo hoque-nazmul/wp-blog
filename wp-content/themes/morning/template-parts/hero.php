@@ -10,6 +10,11 @@
                         <?php bloginfo('name'); ?>
                     </h1>
                 </a>
+                <?php 
+                    if (is_nav_menu('Primary Menu')) {
+                        wp_nav_menu('Primary Menu');
+                    }
+                ?>
             </div>
         </div>
     </div>
