@@ -119,3 +119,9 @@ h2.post-title {
     color: red;
 }
 
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
