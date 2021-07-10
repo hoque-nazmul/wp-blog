@@ -4,6 +4,7 @@
     if(!is_active_sidebar('sidebar-1')) {
         $default_width = 'col-md-10 offset-md-1';
     }
+    $videoIcon = '<span class="dashicons dashicons-video-alt3"></span>';
 ?>
 <body <?php body_class(); ?>>
 <!-- Hero Section -->
@@ -43,6 +44,11 @@
                                     '</li><li>', 
                                     '</li></ul>'
                                 );
+                            ?>
+                            <?php 
+                                if (has_post_format('video')) {
+                                    echo $videoIcon;
+                                }
                             ?>
                         </div>
                         <div class="col-md-9">
