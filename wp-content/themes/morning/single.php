@@ -58,6 +58,11 @@
             <div>
                 <?php wp_link_pages(  ); ?>
             </div>
+            <div>
+                <?php 
+                    comment_form();
+                ?>
+            </div>
             </div>
             <?php if(is_active_sidebar('sidebar-1')): ?>
                 <div class="col-md-3 justify-content-end">
