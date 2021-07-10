@@ -5,6 +5,8 @@
         $default_width = 'col-md-10 offset-md-1';
     }
     $videoIcon = '<span class="dashicons dashicons-video-alt3"></span>';
+    $imageIcon = '<span class="dashicons dashicons-format-image"></span>';
+    $quoteIcon = '<span class="dashicons dashicons-format-quote"></span>';
 ?>
 <body <?php body_class(); ?>>
 <!-- Hero Section -->
@@ -48,6 +50,10 @@
                             <?php 
                                 if (has_post_format('video')) {
                                     echo $videoIcon;
+                                } elseif (has_post_format('image')) {
+                                    echo $imageIcon;
+                                } elseif (has_post_format('quote')) {
+                                    echo $quoteIcon;
                                 }
                             ?>
                         </div>

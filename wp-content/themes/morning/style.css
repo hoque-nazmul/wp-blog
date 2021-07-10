@@ -111,6 +111,11 @@ h2.post-title {
 }
 
 .dashicons {
-    font-size: 30px;
+    font-size: 40px;
+    color: rgb(180, 180, 180);
+}
+
+.dashicons:hover {
+    color: red;
 }
 
