@@ -1,5 +1,15 @@
 <?php 
     get_header();
+    $date = '';
+    if (is_month()) {
+        $month_num = get_query_var('monthnum');
+        $datetime = DateTime::createFromFormat('!m', $month_num);
+        $date = $datetime->format('F');
+    } elseif(is_year()) {
+        $date = get_query_var('year');
+    } elseif (is_day()) {
+        $date = get_query_var('monthnum'). '/' . get_query_var('day') . '/' . get_query_var('year');
+    }
 ?>
 <body <?php body_class(); ?>>
 <!-- Hero Section -->
@@ -7,7 +17,7 @@
 <div class="posts">
     <div class="container">
         <h2 class="text-center text-lead mb-4">
-            Post On - <?php echo get_query_var('tag'); ?>
+            Post On - <?php echo $date; ?>
         </h2>
         <div class="row">
             <div class="col-md-10 offset-md-1">
