@@ -12,7 +12,7 @@
         <div class="col-md-3">
             <p>
                 <strong>
-                    <?php the_author(); ?>
+                    <?php the_author_posts_link(); ?>
                 </strong>
                 <br/>
                 <?php echo get_the_date(); ?>
