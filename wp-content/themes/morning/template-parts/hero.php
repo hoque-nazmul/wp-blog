@@ -11,6 +11,8 @@
                     </h1>
                 </a>
                 <?php 
+                    echo get_search_form();
+                    
                     if (is_nav_menu('Primary Menu')) {
                         wp_nav_menu('Primary Menu');
                     }
