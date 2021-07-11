@@ -72,8 +72,17 @@
         </div>
     </div>
 </div>
-<?php 
-    get_template_part('template-parts/author');
-    get_template_part('template-parts/pagination');
+<?php get_template_part('template-parts/author');?>
+    <div class="row mb-5">
+    <div class="col-md-6 offset-md-3 bg-light py-3">
+        <div class="d-flex justify-content-between">
+            <?php 
+                previous_post_link();
+                next_post_link();
+            ?>
+        </div>
+    </div>
+</div>
+<?php
     get_footer();
 ?>
