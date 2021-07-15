@@ -1,4 +1,4 @@
-var slider = tns({
+const slider = tns({
     container: '.slider',
     items: 1,
     autoplay: true,
@@ -10,4 +10,4 @@ var slider = tns({
     autoplayButtonOutput: false,
     autoplayTimeout: 3000,
     speed: 300
-  });
+});
