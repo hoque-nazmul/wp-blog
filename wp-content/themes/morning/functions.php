@@ -1,4 +1,5 @@
 <?php 
+require_once "lib/attachments.php";
 define( 'FS_METHOD', 'direct' );
 function morning_theme_setup () {
     load_theme_textdomain('morning');

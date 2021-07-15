@@ -42,10 +42,24 @@
                             ?>
                             <p>
                                 <?php 
+                                    /*
                                     if(has_post_thumbnail()) {
                                         the_post_thumbnail('large', ['class' => 'img-fluid']);
                                     }
+                                    */
                                 ?>
+                                <div class="slider">
+                                <?php
+                                $attachments = new Attachments( 'slider');
+                                ?>
+                                <?php if( $attachments->exist() ) : ?>
+                                    <?php while( $attachment = $attachments->get() ) : ?>
+                                        <div>
+                                            <?php echo $attachments->image('large'); ?>
+                                        </div>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                                </div>
                             </p>
                             <?php 
                                 the_content();
