@@ -1,0 +1,11 @@
+.h1.heading {
+    color: rgb(2, 165, 165) !important;
+}
+
+input[type=submit] {
+    background-color: cyan;
+    color: black;
+    border: 1px solid cyan;
+    padding: 5px 8px;
+    border-radius: 8px;
+}

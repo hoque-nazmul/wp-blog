@@ -30,6 +30,7 @@ function morning_theme_assets () {
         null, 
         VERSION
     );
+    wp_enqueue_style('morning', get_template_directory_uri(). '/assets/css/morning.css');
     wp_enqueue_style(
         'main-css', 
         get_stylesheet_uri(), 
