@@ -21,7 +21,6 @@ function morning_attachments( $attachments )
     'note'          => 'Morning Slider here',
     'button_text'   => __( 'Attach Files', 'morning' ),
     'fields'        => $fields,
-
   );
 
   $attachments->register( 'slider', $args ); // unique instance name

@@ -1,6 +1,9 @@
 <?php 
-require_once "lib/attachments.php";
 define( 'FS_METHOD', 'direct' );
+if (class_exists('Attachments')) {
+    require_once "lib/attachments.php";
+}
+
 function morning_theme_setup () {
     load_theme_textdomain('morning');
     add_theme_support('title-tag');
@@ -19,6 +22,8 @@ function morning_theme_assets () {
         define('VERSION', wp_get_theme()->get('Version'));
     }
 
+    wp_enqueue_style('tiny-css', '//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css', [], VERSION);
+
     wp_enqueue_style(
         'bootstrap-css', 
         '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', 
@@ -31,6 +36,8 @@ function morning_theme_assets () {
         null, 
         VERSION
     );
+    wp_enqueue_script('tiny-js', '//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, VERSION, true);
+    wp_enqueue_script('main-js', get_theme_file_uri('/assets/main.js'), null, VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'morning_theme_assets');
 

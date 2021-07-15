@@ -42,23 +42,27 @@
                             ?>
                             <p>
                                 <?php 
-                                    /*
-                                    if(has_post_thumbnail()) {
-                                        the_post_thumbnail('large', ['class' => 'img-fluid']);
+                                    $attachments = new Attachments( 'slider');
+                                    if ( !$attachments->exist() ) {
+                                        
+                                        if(has_post_thumbnail()) {
+                                            the_post_thumbnail('large', ['class' => 'img-fluid']);
+                                        }
                                     }
-                                    */
                                 ?>
                                 <div class="slider">
-                                <?php
-                                $attachments = new Attachments( 'slider');
-                                ?>
-                                <?php if( $attachments->exist() ) : ?>
-                                    <?php while( $attachment = $attachments->get() ) : ?>
-                                        <div>
-                                            <?php echo $attachments->image('large'); ?>
-                                        </div>
-                                    <?php endwhile; ?>
-                                <?php endif; ?>
+                                    <?php
+                                    if (class_exists('Attachments')):
+                                    $attachments = new Attachments( 'slider');
+                                    ?>
+                                    <?php if( $attachments->exist() ) : ?>
+                                        <?php while( $attachment = $attachments->get() ) : ?>
+                                            <div>
+                                                <?php echo $attachments->image('large'); ?>
+                                            </div>
+                                        <?php endwhile; ?>
+                                    <?php endif; ?>
+                                    <?php endif; ?>
                                 </div>
                             </p>
                             <?php 
