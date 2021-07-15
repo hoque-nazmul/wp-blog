@@ -76,8 +76,12 @@
             <div>
                 <?php wp_link_pages(  ); ?>
             </div>
+            
             <div>
                 <?php 
+                    if ( comments_open() || get_comments_number() ) {
+                        comments_template();
+                    }
                     comment_form();
                 ?>
             </div>
