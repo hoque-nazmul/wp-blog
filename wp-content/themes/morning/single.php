@@ -42,11 +42,9 @@
                             ?>
                             <p>
                                 <?php 
-                                    $attachments = new Attachments( 'slider');
-                                    if ( !$attachments->exist() ) {
-                                        
+                                    if (!class_exists('Attachments')) {
                                         if(has_post_thumbnail()) {
-                                            the_post_thumbnail('large', ['class' => 'img-fluid']);
+                                            the_post_thumbnail('large', ['class' => 'img-fluid', 'style'=>'width:100%']);
                                         }
                                     }
                                 ?>
