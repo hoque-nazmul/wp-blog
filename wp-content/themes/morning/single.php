@@ -79,10 +79,9 @@
             
             <div>
                 <?php 
-                    if ( comments_open() || get_comments_number() ) {
+                    if (!post_password_required() && get_comments_number()) {
                         comments_template();
                     }
-                    comment_form();
                 ?>
             </div>
             </div>

@@ -1,18 +1,11 @@
 <?php 
-//Get only the approved comments
-$args = array(
-    'status' => 'approve'
-);
- 
-// The comment Query
-$comments_query = new WP_Comment_Query;
-$comments = $comments_query->query( $args );
- 
-// Comment Loop
-if ( $comments ) {
- foreach ( $comments as $comment ) {
- echo '<p>' . $comment->comment_content . '</p>';
- }
-} else {
- echo 'No comments found.';
-}
+    wp_list_comments();
+    if (!comments_open()) {
+        _e('Comment Box is full', 'morning');
+    }
+    the_comments_pagination([
+        'prev_text' => __('Previous', 'morning'),
+        'next_text' => __('Next', 'morning'),
+        'screen_reader_text' => __(' ', 'morning')
+    ]);
+    comment_form();
