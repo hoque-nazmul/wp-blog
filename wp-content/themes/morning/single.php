@@ -50,8 +50,8 @@
                                 ?>
                                 <div class="slider">
                                     <?php
-                                    if (class_exists('Attachments')):
-                                    $attachments = new Attachments( 'slider');
+                                        if (class_exists('Attachments')):
+                                        $attachments = new Attachments('slider');
                                     ?>
                                     <?php if( $attachments->exist() ) : ?>
                                         <?php while( $attachment = $attachments->get() ) : ?>
