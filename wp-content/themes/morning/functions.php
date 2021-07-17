@@ -1,4 +1,5 @@
 <?php 
+require_once get_theme_file_path('/inc/tgm.php');
 define( 'FS_METHOD', 'direct' );
 if (class_exists('Attachments')) {
     require_once "lib/attachments.php";
