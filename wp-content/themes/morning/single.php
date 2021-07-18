@@ -92,6 +92,17 @@
                                     echo "<a target='_blank' href='{$file_url}'>
                                         <img src='{$file_thumbnail_img}' />
                                     </a>";
+                                    echo "<br/>";
+                                    $related_posts = get_field('related_posts');
+                                    $_p = new WP_Query([
+                                        'post__in' => $related_posts,
+                                        'orderby' => 'post__in'
+                                    ]);
+                                    while($_p->have_posts()){
+                                        $_p->the_post();
+                                        echo "<h2>".the_title()."</h2>";
+                                    }
+                                    wp_reset_query();
                                 }
                             ?>
                         </div>
