@@ -65,6 +65,19 @@
                             </p>
                             <?php 
                                 the_content();
+                                if (get_post_format() == 'image' && function_exists('the_field')) {
+                                    $location = get_field('location');
+                                    $date = get_field('date');
+                                    if (get_field('required_text')) {
+                                        $required_text = get_field('required_text');
+                                    }
+
+                                    echo esc_html($location, 'morning');
+                                    echo "<br>";
+                                    echo esc_html($date, 'morning');
+                                    echo "<br>";
+                                    echo esc_html($required_text, 'morning');
+                                }
                             ?>
                         </div>
                     </div>
