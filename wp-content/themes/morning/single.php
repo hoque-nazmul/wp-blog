@@ -68,6 +68,13 @@
                                 if (get_post_format() == 'image' && function_exists('the_field')) {
                                     $location = get_field('location');
                                     $date = get_field('date');
+                                    $img_thumbnail_id = get_field('thumbnail');
+                                    $img_thumbnail_url = wp_get_attachment_image_url($img_thumbnail_id, 'thumbnail');
+                                    $file_id = get_field('documents');
+                                    $file_url = wp_get_attachment_url($file_id);
+                                    $file_thumbnail_id = get_field('documents_preview', $file_id);
+                                    $file_thumbnail_img = wp_get_attachment_image_url($file_thumbnail_id, 'thumbnail');
+
                                     if (get_field('required_text')) {
                                         $required_text = get_field('required_text');
                                     }
@@ -77,6 +84,14 @@
                                     echo esc_html($date, 'morning');
                                     echo "<br>";
                                     echo esc_html($required_text, 'morning');
+                                    echo "<br>";
+                                    echo "<img src=".$img_thumbnail_url." >";
+                                    echo "<br/>";
+                                    echo "<a target='_blank' href='{$file_url}'>$file_url</a>";
+                                    echo "<br/>";
+                                    echo "<a target='_blank' href='{$file_url}'>
+                                        <img src='{$file_thumbnail_img}' />
+                                    </a>";
                                 }
                             ?>
                         </div>
